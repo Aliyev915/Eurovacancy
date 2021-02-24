@@ -2,6 +2,7 @@
 	.jp_job_heading h1{
 		font-size:40px;
 	}
+
 	.jp_job_post_right_btn_wrapper ul{
 		float:left;
 	}
@@ -90,7 +91,7 @@
 		top:37px;
 	}
 	.jp_top_jobs_category_wrapper{
-		width:33.33%;
+		width:100%;
 	}
 	.jp_job_cate_left_border_res{
 		border-left:1px solid #ffffff21;
