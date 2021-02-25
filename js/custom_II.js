@@ -142,34 +142,6 @@
     })
 
 
-    $(document).ready(function () {
-      $('.jp_testi_slider_wrapper .owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        responsiveClass: true,
-        smartSpeed: 1200,
-        navText: ['<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>'],
-        responsive: {
-          0: {
-            items: 1,
-            nav: true
-          },
-          600: {
-            items: 1,
-            nav: true
-          },
-          1000: {
-            items: 1,
-            nav: true,
-            loop: true,
-            margin: 20
-          }
-        }
-      })
-    })
-
-
     // Featured Products Js
     $('.ss_featured_products .owl-carousel').owlCarousel({
       loop: true,
@@ -195,60 +167,6 @@
 
     $(document).ready(function () {
       $('.jp_spotlight_slider_wrapper .owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        responsiveClass: true,
-        smartSpeed: 1200,
-        navText: ['<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>'],
-        responsive: {
-          0: {
-            items: 1,
-            nav: true
-          },
-          600: {
-            items: 1,
-            nav: true
-          },
-          1000: {
-            items: 1,
-            nav: true,
-            loop: true,
-            margin: 20
-          }
-        }
-      })
-    })
-
-    $(document).ready(function () {
-      $('.jp_best_deal_slider_wrapper .owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        responsiveClass: true,
-        smartSpeed: 1200,
-        navText: ['<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>'],
-        responsive: {
-          0: {
-            items: 1,
-            nav: true
-          },
-          600: {
-            items: 1,
-            nav: true
-          },
-          1000: {
-            items: 1,
-            nav: true,
-            loop: true,
-            margin: 20
-          }
-        }
-      })
-    })
-
-    $(document).ready(function () {
-      $('.jp_client_slider_wrapper .owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
         autoplay: true,
@@ -329,34 +247,6 @@
       })
     })
 
-
-    $(document).ready(function () {
-      $('.jp_client_second_slider_wrapper .owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        responsiveClass: true,
-        smartSpeed: 1200,
-        navText: ['<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>'],
-        responsive: {
-          0: {
-            items: 1,
-            nav: true
-          },
-          600: {
-            items: 3,
-            nav: true
-          },
-          1000: {
-            items: 5,
-            nav: true,
-            loop: true,
-            margin: 20
-          }
-        }
-      })
-    })
-
     //------------------------ OWL JS End --------------------//
 
 
@@ -381,106 +271,12 @@
     });
 
 
-
-    //-----js chat box --------//
-    $(function () {
-      var INDEX = 0;
-      $("#chat-submit").on('click', function (e) {
-        e.preventDefault();
-        var msg = $("#chat-input").val();
-        if (msg.trim() == '') {
-          return false;
-        }
-        generate_message(msg, 'self');
-        var buttons = [
-          {
-            name: 'Existing User',
-            value: 'existing'
-          },
-          {
-            name: 'New User',
-            value: 'new'
-          }
-        ];
-        setTimeout(function () {
-          generate_message(msg, 'user');
-        }, 1000)
-
-      })
-
-      function generate_message(msg, type) {
-        INDEX++;
-        var str = "";
-        str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + "\">";
-        str += "          <span class=\"images/content/ct.png\">";
-        str += "            <img src=\"images/content/ct.png\">";
-        str += "          <\/span>";
-        str += "          <div class=\"cm-msg-text\">";
-        str += msg;
-        str += "          <\/div>";
-        str += "        <\/div>";
-        $(".chat-logs").append(str);
-        $("#cm-msg-" + INDEX).hide().fadeIn(300);
-        if (type == 'self') {
-          $("#chat-input").val('');
-        }
-        $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
-      }
-
-      function generate_button_message(msg, buttons) {
-        /* Buttons should be object array 
-          [
-            {
-              name: 'Existing User',
-              value: 'existing'
-            },
-            {
-              name: 'New User',
-              value: 'new'
-            }
-          ]
-        */
-        INDEX++;
-        var btn_obj = buttons.map(function (button) {
-          return "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\"" + button.value + "\">" + button.name + "<\/a><\/li>";
-        }).join('');
-        var str = "";
-        str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg user\">";
-        str += "          <span class=\"images/content/ct2.png\">";
-        str += "            <img src=\"images/content/ct2.png\">";
-        str += "          <\/span>";
-        str += "          <div class=\"cm-msg-text\">";
-        str += msg;
-        str += "          <\/div>";
-        str += "          <div class=\"cm-msg-button\">";
-        str += "            <ul>";
-        str += btn_obj;
-        str += "            <\/ul>";
-        str += "          <\/div>";
-        str += "        <\/div>";
-        $(".chat-logs").append(str);
-        $("#cm-msg-" + INDEX).hide().fadeIn(300);
-        $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
-        $("#chat-input").attr("disabled", true);
-      }
-
-      $(document).delegate(".chat-btn", "click", function () {
-        var value = $(this).attr("chat-value");
-        var name = $(this).html();
-        $("#chat-input").attr("disabled", false);
-        generate_message(name, 'self');
-      })
-
-      $("#chat-circle").on('click', function () {
-        $("#chat-circle").toggle('scale');
-        $(".chat-box").toggle('scale');
-      })
-
-      $(".chat-box-toggle").on('click', function () {
-        $("#chat-circle").toggle('scale');
-        $(".chat-box").toggle('scale');
-      })
-
+    $('.btn_apply').on('click',function(e){
+      e.preventDefault();
+      $('.modal').show();
+    })
+    $('.close').click(function(){
+      $('.modal').hide();
     })
 
 
