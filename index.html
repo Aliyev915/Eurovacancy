@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" />
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="images/header/favicon.ico" />
 </head>
@@ -189,49 +189,126 @@
         <div class="jp_banner_heading_cont_wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="jp_job_heading_wrapper">
-                            <div class="jp_job_heading">
-                                <h1><span>3,000+</span> İşlərə baxın</h1>
-                                <p>İş və karyera imkanları tapın</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="jp_header_form_wrapper">
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                <input type="text" placeholder="Keyword e.g. (Job Title, Description, Tags)">
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                <div class="jp_form_location_wrapper">
-                                    <i class="fa fa-dot-circle-o first_icon"></i><select>
-                                        <option>Yer seçin</option>
-                                        <option>Yer seçin</option>
-                                        <option>Yer seçin</option>
-                                        <option>Yer seçin</option>
-                                        <option>Yer seçin</option>
-                                    </select><i class="fa fa-angle-down second_icon"></i>
+                    <div class="etrafli-axtaris">
+                        <!-- <span class="cross-right"><i class="fas fa-times"></i></span> -->
+                        <form action="{{url('/')}}" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-11 filter_page_filter main_page_filter_inputs p-0">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <select name="direction" class="chosen-select" disabled>
+                                                    <option value="works">İş axtarıram</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <select name="category" class="chosen-select">
+                                                    <option value="">Kateqoriya</option>
+                                                        <option value="{{$category->id}}" class="bg-primary text-white">
+                                                        </option>
+                                                            <option value="{{$subcategory->id}}"></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <select name="country" class="chosen-select">
+                                                    <option value="">Ölkə</option>
+                                                    <option value="{{$country->country}}"></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <select name="salary" class="chosen-select">
+                                                    <option value="">Maaş</option>
+                                                    <option value="100">Minimum 100 AZN </option>
+                                                    <option value="200">Minimum 200 AZN </option>
+                                                    <option value="300">Minimum 300 AZN </option>
+                                                    <option value="400">Minimum 400 AZN </option>
+                                                    <option value="500">Minimum 500 AZN </option>
+                                                    <option value="600">Minimum 600 AZN </option>
+                                                    <option value="700">Minimum 700 AZN </option>
+                                                    <option value="800">Minimum 800 AZN </option>
+                                                    <option value="900">Minimum 900 AZN </option>
+                                                    <option value="1000">Minimum 1000 AZN </option>
+                                                    <option value="1100">Minimum 1100 AZN </option>
+                                                    <option value="1200">Minimum 1200 AZN </option>
+                                                    <option value="1300">Minimum 1300 AZN </option>
+                                                    <option value="1400">Minimum 1400 AZN </option>
+                                                    <option value="1500">Minimum 1500 AZN </option>
+                                                    <option value="1600">Minimum 1600 AZN </option>
+                                                    <option value="1700">Minimum 1700 AZN </option>
+                                                    <option value="1800">Minimum 1800 AZN </option>
+                                                    <option value="1900">Minimum 1900 AZN </option>
+                                                    <option value="2000">Minimum 2000 AZN </option>
+                                                    <option value="2100">Minimum 2100 AZN </option>
+                                                    <option value="2200">Minimum 2200 AZN </option>
+                                                    <option value="2300">Minimum 2300 AZN </option>
+                                                    <option value="2400">Minimum 2400 AZN </option>
+                                                    <option value="2500">Minimum 2500 AZN </option>
+                                                    <option value="2600">Minimum 2600 AZN </option>
+                                                    <option value="2700">Minimum 2700 AZN </option>
+                                                    <option value="2800">Minimum 2800 AZN </option>
+                                                    <option value="2900">Minimum 2900 AZN </option>
+                                                    <option value="3000">Minimum 3000 AZN </option>
+                                                    <option value="3100">Minimum 3100 AZN </option>
+                                                    <option value="3200">Minimum 3200 AZN </option>
+                                                    <option value="3300">Minimum 3300 AZN </option>
+                                                    <option value="3400">Minimum 3400 AZN </option>
+                                                    <option value="3500">Minimum 3500 AZN </option>
+                                                    <option value="3600">Minimum 3600 AZN </option>
+                                                    <option value="3700">Minimum 3700 AZN </option>
+                                                    <option value="3800">Minimum 3800 AZN </option>
+                                                    <option value="3900">Minimum 3900 AZN </option>
+                                                    <option value="4000">Minimum 4000 AZN </option>
+                                                    <option value="5000">Minimum 5000 AZN </option>
+                                                    <option value="6000">Minimum 6000 AZN </option>
+                                                    <option value="7000">Minimum 7000 AZN </option>
+                                                    <option value="8000">Minimum 8000 AZN </option>
+                                                    <option value="9000">Minimum 9000 AZN </option>
+                                                    <option value="10000">Minimum 10000 AZN </option>
+                                                    <option value="11000">Minimum 11000 AZN </option>
+                                                    <option value="12000">Minimum 12000 AZN </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <select name="education" class="chosen-select">
+                                                    <option value="">Təhsil</option>
+                                                    <option value="Elmi dərəcə">Elmi dərəcə</option>
+                                                    <option value="Ali">Ali</option>
+                                                    <option value="Natamam ali">Natamam ali</option>
+                                                    <option value="Orta texniki">Orta texniki</option>
+                                                    <option value="Orta xüsusi">Orta xüsusi</option>
+                                                    <option value="Orta">Orta</option>
+                                                    <option value="Digər">- Digər -</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <select name="experience" class="chosen-select">
+                                                    <option value="">İş təcrübəsi</option>
+                                                    <option value="1 ildən az">1 ildən az</option>
+                                                    <option value="1 ildən 3 ilə qədər">1 ildən 3 ilə qədər</option>
+                                                    <option value="3 ildən 5 ilə qədər">3 ildən 5 ilə qədər</option>
+                                                    <option value="3 ildən 5 ilə qədər">5 ildən yüksək</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 search_results">
+                                            <input type="hidden" name="search_type" value="filter">
+                                            <button data-action="search" id="srch-result-count-bar">Axtar</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                <div class="jp_form_exper_wrapper">
-                                    <i class="fa fa-dot-circle-o first_icon"></i><select>
-                                        <option>Təcrübə</option>
-                                        <option>Təcrübə</option>
-                                        <option>Təcrübə</option>
-                                        <option>Təcrübə</option>
-                                        <option>Təcrübə</option>
-                                    </select><i class="fa fa-angle-down second_icon"></i>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                                <div class="jp_form_btn_wrapper">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-search"></i> Axtarış</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
+        
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="jp_banner_main_jobs_wrapper">
@@ -2149,7 +2226,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="jp_rightside_career_wrapper">
+                                <!-- <div class="jp_rightside_career_wrapper">
                                     <div class="jp_rightside_career_heading">
                                         <h4>Career Advice</h4>
                                     </div>
@@ -2185,7 +2262,7 @@
                                             <a href="#"><i class="fa fa-plus-circle"></i> View All</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="jp_rightside_job_categories_wrapper">
